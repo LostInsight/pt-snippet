@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name        NexusPHP Hightlight
 // @name:zh-CN  NexusPHP 高亮脚本
-// @version     0.0.2
+// @version     0.0.3
 // @description A script for highlighting free and 2xfree items in NexusPHP based PT sites
-// @description:zh-CN 适用基于NexusPHP的PT站，提供对free、2xfree种的高亮和鼠标悬停高亮
+// @description:zh-CN 适用于基于 NexusPHP 的 PT 站的高亮脚本，包括free、2xfree高亮和鼠标悬停高亮
 // @author      LostInsight
-// @note        大量站点未测，特别是CHD，TTG，影客，U2，HDChina
+// @updateURL   https://github.com/LostInsight/pt-snippet/raw/master/userscripts/NexusPHP_Hightlight.user.js
+// @note        大量站点未测，特别是CHD，影客，U2，HDChina
 // @note        网址和入口参考PT-Plugin-Plus内置地址
 // @note        部分识别接口参考Juszoe的flexget-nexusphp但具体未测
+// @note        特别适配MT和TTG
 // @match       *://*.52pt.site/*
 // @match       *://*.byr.cn/*
 // @match       *://*.chdbits.co/*
@@ -69,14 +71,13 @@
                     cnt.replaceWith(...cnt.childNodes);
                 }
             }catch(err) {}
-            
             var styleElement = document.createElement('style');
             styleElement.innerHTML = '.torrents tr:hover{background-color:#009966;}';
             document.head.append(styleElement);
 
-            const freenames = ['pro_free', 'pro_free2up','free','twoupfree','span_frees','span_twoupfreels','本种子限时不计流量'];
+            const freenames = ['.pro_free', '.pro_free2up','.free','.twoupfree','.span_frees','.span_twoupfreels','img[alt=free]'];
             for (const freename of freenames) {
-                var $free=document.getElementsByClassName(freename);
+                var $free=document.querySelectorAll(freename);
                 for (const free of $free) {
                     free.parentElement.parentElement.setAttribute('style','background:#c6dc11');
                 }
