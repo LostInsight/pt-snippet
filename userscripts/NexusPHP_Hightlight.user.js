@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name        NexusPHP Hightlight
 // @name:zh-CN  NexusPHP 高亮脚本
-// @version     0.0.3
+// @version     0.0.4
 // @description A script for highlighting free and 2xfree items in NexusPHP based PT sites
 // @description:zh-CN 适用于基于 NexusPHP 的 PT 站的高亮脚本，包括free、2xfree高亮和鼠标悬停高亮
 // @author      LostInsight
 // @updateURL   https://github.com/LostInsight/pt-snippet/raw/master/userscripts/NexusPHP_Hightlight.user.js
-// @note        大量站点未测，特别是CHD，影客，U2，HDChina
+// @note        大量站点未测，特别是CHD，U2，HDChina
 // @note        网址和入口参考PT-Plugin-Plus内置地址
 // @note        部分识别接口参考Juszoe的flexget-nexusphp但具体未测
 // @note        特别适配MT和TTG
